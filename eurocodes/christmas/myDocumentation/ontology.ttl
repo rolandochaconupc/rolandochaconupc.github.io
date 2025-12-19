@@ -1,0 +1,349 @@
+@prefix : <http://example.org/christmas#Christmas> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/christmas#Christmas> .
+
+<http://example.org/christmas#Christmas> rdf:type owl:Ontology ;
+                                          rdfs:label "Christmas Ontology (Playground)"@en ;
+                                          <http://www.w3.org/2004/02/skos/core#definition> "A compact OWL playground for GraphDB: events, people, gifts, wishes, places, dates, traditions; includes inverses and rule-like axioms."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/christmas#dateOfEvent
+<http://example.org/christmas#dateOfEvent> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://example.org/christmas#Date> ;
+                                           rdfs:range :Event ;
+                                           rdfs:label "date of event"@en .
+
+
+###  http://example.org/christmas#giftFor
+<http://example.org/christmas#giftFor> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <http://example.org/christmas#receivesGift> ;
+                                       rdfs:domain <http://example.org/christmas#Gift> ;
+                                       rdfs:range <http://example.org/christmas#Person> ;
+                                       rdfs:label "gift for"@en .
+
+
+###  http://example.org/christmas#giftGivenBy
+<http://example.org/christmas#giftGivenBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://example.org/christmas#Gift> ;
+                                           rdfs:range <http://example.org/christmas#Person> ;
+                                           rdfs:label "gift given by"@en .
+
+
+###  http://example.org/christmas#givesGift
+<http://example.org/christmas#givesGift> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://example.org/christmas#giftGivenBy> ;
+                                         rdfs:domain <http://example.org/christmas#Person> ;
+                                         rdfs:range <http://example.org/christmas#Gift> ;
+                                         rdfs:label "gives gift"@en .
+
+
+###  http://example.org/christmas#givesGiftTo
+<http://example.org/christmas#givesGiftTo> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://example.org/christmas#Person> ;
+                                           rdfs:range <http://example.org/christmas#Person> ;
+                                           owl:propertyChainAxiom _:genid2 ;
+                                           rdfs:label "gives gift to"@en .
+
+_:genid2 rdf:type rdf:List ;
+          rdf:first <http://example.org/christmas#givesGift> ;
+          rdf:rest ( <http://example.org/christmas#giftFor>
+                   ) .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource <http://example.org/christmas#givesGiftTo> ;
+   owl:annotatedProperty owl:propertyChainAxiom ;
+   owl:annotatedTarget _:genid2 ;
+   rdfs:comment "If P givesGift G and G giftFor Q, infer P givesGiftTo Q."@en
+ ] .
+
+
+###  http://example.org/christmas#givesWish
+<http://example.org/christmas#givesWish> rdf:type owl:ObjectProperty ;
+                                         owl:inverseOf <http://example.org/christmas#wishFrom> ;
+                                         rdfs:domain <http://example.org/christmas#Person> ;
+                                         rdfs:range <http://example.org/christmas#Wish> ;
+                                         rdfs:label "gives wish"@en .
+
+
+###  http://example.org/christmas#hasDate
+<http://example.org/christmas#hasDate> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <http://example.org/christmas#dateOfEvent> ;
+                                       rdfs:domain :Event ;
+                                       rdfs:range <http://example.org/christmas#Date> ;
+                                       rdfs:label "has date"@en .
+
+
+###  http://example.org/christmas#hasParticipant
+<http://example.org/christmas#hasParticipant> rdf:type owl:ObjectProperty ;
+                                              owl:inverseOf <http://example.org/christmas#participatesIn> ;
+                                              rdfs:domain :Event ;
+                                              rdfs:range <http://example.org/christmas#Person> ;
+                                              rdfs:label "has participant"@en .
+
+
+###  http://example.org/christmas#hasTradition
+<http://example.org/christmas#hasTradition> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <http://example.org/christmas#traditionOfEvent> ;
+                                            rdfs:domain :Event ;
+                                            rdfs:range <http://example.org/christmas#Tradition> ;
+                                            rdfs:label "has tradition"@en .
+
+
+###  http://example.org/christmas#hostedBy
+<http://example.org/christmas#hostedBy> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <http://example.org/christmas#hasParticipant> ;
+                                        owl:inverseOf <http://example.org/christmas#hosts> ;
+                                        rdfs:domain :Event ;
+                                        rdfs:range <http://example.org/christmas#Person> ;
+                                        rdfs:label "hosted by"@en .
+
+
+###  http://example.org/christmas#hosts
+<http://example.org/christmas#hosts> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://example.org/christmas#Person> ;
+                                     rdfs:range :Event ;
+                                     rdfs:label "hosts"@en .
+
+
+###  http://example.org/christmas#participatesIn
+<http://example.org/christmas#participatesIn> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://example.org/christmas#Person> ;
+                                              rdfs:range :Event ;
+                                              rdfs:label "participates in"@en .
+
+
+###  http://example.org/christmas#placeOfEvent
+<http://example.org/christmas#placeOfEvent> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://example.org/christmas#Place> ;
+                                            rdfs:range :Event ;
+                                            rdfs:label "place of event"@en .
+
+
+###  http://example.org/christmas#receivesGift
+<http://example.org/christmas#receivesGift> rdf:type owl:ObjectProperty ;
+                                            rdfs:domain <http://example.org/christmas#Person> ;
+                                            rdfs:range <http://example.org/christmas#Gift> ;
+                                            rdfs:label "receives gift"@en .
+
+
+###  http://example.org/christmas#takesPlaceAt
+<http://example.org/christmas#takesPlaceAt> rdf:type owl:ObjectProperty ;
+                                            owl:inverseOf <http://example.org/christmas#placeOfEvent> ;
+                                            rdfs:domain :Event ;
+                                            rdfs:range <http://example.org/christmas#Place> ;
+                                            rdfs:label "takes place at"@en .
+
+
+###  http://example.org/christmas#traditionOfEvent
+<http://example.org/christmas#traditionOfEvent> rdf:type owl:ObjectProperty ;
+                                                rdfs:domain <http://example.org/christmas#Tradition> ;
+                                                rdfs:range :Event ;
+                                                rdfs:label "tradition of event"@en .
+
+
+###  http://example.org/christmas#wishFrom
+<http://example.org/christmas#wishFrom> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <http://example.org/christmas#Wish> ;
+                                        rdfs:range <http://example.org/christmas#Person> ;
+                                        rdfs:label "wish from"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/christmas#dateValue
+<http://example.org/christmas#dateValue> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/christmas#Date> ;
+                                         rdfs:range xsd:date ;
+                                         rdfs:label "date value"@en .
+
+
+###  http://example.org/christmas#giftBudgetEUR
+<http://example.org/christmas#giftBudgetEUR> rdf:type owl:DatatypeProperty ;
+                                             rdfs:domain <http://example.org/christmas#Gift> ;
+                                             rdfs:range xsd:decimal ;
+                                             rdfs:label "gift budget (EUR)"@en .
+
+
+###  http://example.org/christmas#giftLabel
+<http://example.org/christmas#giftLabel> rdf:type owl:DatatypeProperty ;
+                                         rdfs:domain <http://example.org/christmas#Gift> ;
+                                         rdfs:range xsd:string ;
+                                         rdfs:label "gift label"@en .
+
+
+###  http://example.org/christmas#hasDescription
+<http://example.org/christmas#hasDescription> rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain owl:Thing ;
+                                              rdfs:range xsd:string ;
+                                              rdfs:label "has description"@en .
+
+
+###  http://example.org/christmas#hasName
+<http://example.org/christmas#hasName> rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain owl:Thing ;
+                                       rdfs:range xsd:string ;
+                                       rdfs:label "has name"@en .
+
+
+###  http://example.org/christmas#placeAddress
+<http://example.org/christmas#placeAddress> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain <http://example.org/christmas#Place> ;
+                                            rdfs:range xsd:string ;
+                                            rdfs:label "place address"@en .
+
+
+###  http://example.org/christmas#wishText
+<http://example.org/christmas#wishText> rdf:type owl:DatatypeProperty ;
+                                        rdfs:domain <http://example.org/christmas#Wish> ;
+                                        rdfs:range xsd:string ;
+                                        rdfs:label "wish text"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/christmas#ChristmasEvent
+:Event rdf:type owl:Class ;
+       rdfs:label "Christmas Event"@en ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "ChristmasEvent"@en .
+
+
+###  http://example.org/christmas#Date
+<http://example.org/christmas#Date> rdf:type owl:Class ;
+                                    rdfs:label "Date"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Date"@en .
+
+
+###  http://example.org/christmas#Gift
+<http://example.org/christmas#Gift> rdf:type owl:Class ;
+                                    rdfs:label "Gift"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Gift"@en .
+
+
+###  http://example.org/christmas#Person
+<http://example.org/christmas#Person> rdf:type owl:Class ;
+                                      rdfs:label "Person"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Person"@en .
+
+
+###  http://example.org/christmas#Place
+<http://example.org/christmas#Place> rdf:type owl:Class ;
+                                     rdfs:label "Place"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Place"@en .
+
+
+###  http://example.org/christmas#Tradition
+<http://example.org/christmas#Tradition> rdf:type owl:Class ;
+                                         rdfs:label "Tradition"@en ;
+                                         <http://www.w3.org/2004/02/skos/core#prefLabel> "Tradition"@en .
+
+
+###  http://example.org/christmas#Wish
+<http://example.org/christmas#Wish> rdf:type owl:Class ;
+                                    rdfs:label "Wish"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Wish"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/christmas#Alex
+<http://example.org/christmas#Alex> rdf:type owl:NamedIndividual ,
+                                             <http://example.org/christmas#Person> ;
+                                    <http://example.org/christmas#hasName> "Alex" .
+
+
+###  http://example.org/christmas#Barcelona
+<http://example.org/christmas#Barcelona> rdf:type owl:NamedIndividual ,
+                                                  <http://example.org/christmas#Place> ;
+                                         <http://example.org/christmas#hasName> "Barcelona" ;
+                                         <http://example.org/christmas#placeAddress> "Barcelona, Catalonia"@en .
+
+
+###  http://example.org/christmas#BookGift
+<http://example.org/christmas#BookGift> rdf:type owl:NamedIndividual ,
+                                                 <http://example.org/christmas#Gift> ;
+                                        <http://example.org/christmas#giftFor> <http://example.org/christmas#Maria> ;
+                                        <http://example.org/christmas#giftGivenBy> <http://example.org/christmas#Alex> ;
+                                        <http://example.org/christmas#giftBudgetEUR> 18.50 ;
+                                        <http://example.org/christmas#giftLabel> "Book"@en .
+
+
+###  http://example.org/christmas#BridgeTwinWish
+<http://example.org/christmas#BridgeTwinWish> rdf:type owl:NamedIndividual ,
+                                                       <http://example.org/christmas#Wish> ;
+                                              <http://example.org/christmas#wishFrom> <http://example.org/christmas#Rolando> ;
+                                              <http://example.org/christmas#wishText> "A semantic digital twin that behaves like a courteous engineer."@en .
+
+
+###  http://example.org/christmas#ChristmasDate2025
+:Date2025 rdf:type owl:NamedIndividual ,
+                   <http://example.org/christmas#Date> ;
+          <http://example.org/christmas#dateValue> "2025-12-25"^^xsd:date ;
+          <http://example.org/christmas#hasName> "Christmas Day 2025"@en .
+
+
+###  http://example.org/christmas#ChristmasDinner2025
+:Dinner2025 rdf:type owl:NamedIndividual ,
+                     :Event ;
+            <http://example.org/christmas#hasDate> :Date2025 ;
+            <http://example.org/christmas#hasParticipant> <http://example.org/christmas#Alex> ,
+                                                          <http://example.org/christmas#Maria> ;
+            <http://example.org/christmas#hasTradition> <http://example.org/christmas#SecretSanta> ;
+            <http://example.org/christmas#hostedBy> <http://example.org/christmas#Rolando> ;
+            <http://example.org/christmas#takesPlaceAt> <http://example.org/christmas#Barcelona> ;
+            <http://example.org/christmas#hasName> "Christmas Dinner 2025"@en .
+
+
+###  http://example.org/christmas#Maria
+<http://example.org/christmas#Maria> rdf:type owl:NamedIndividual ,
+                                              <http://example.org/christmas#Person> ;
+                                     <http://example.org/christmas#hasName> "Maria" .
+
+
+###  http://example.org/christmas#Rolando
+<http://example.org/christmas#Rolando> rdf:type owl:NamedIndividual ,
+                                                <http://example.org/christmas#Person> ;
+                                       <http://example.org/christmas#hasDescription> "A participant in the Christmas playground graph."@en ;
+                                       <http://example.org/christmas#hasName> "Rolando" .
+
+
+###  http://example.org/christmas#SecretSanta
+<http://example.org/christmas#SecretSanta> rdf:type owl:NamedIndividual ,
+                                                    <http://example.org/christmas#Tradition> ;
+                                           <http://example.org/christmas#hasDescription> "Anonymous gift exchange tradition."@en ;
+                                           <http://example.org/christmas#hasName> "Secret Santa"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

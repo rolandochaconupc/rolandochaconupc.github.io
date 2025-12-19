@@ -1,0 +1,326 @@
+<http://example.org/christmas#Christmas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://example.org/christmas#Christmas> <http://www.w3.org/2000/01/rdf-schema#label> "Christmas Ontology (Playground)"@en .
+<http://example.org/christmas#Christmas> <http://www.w3.org/2004/02/skos/core#definition> "A compact OWL playground for GraphDB: events, people, gifts, wishes, places, dates, traditions; includes inverses and rule-like axioms."@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/christmas#dateOfEvent
+<http://example.org/christmas#dateOfEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#dateOfEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Date> .
+<http://example.org/christmas#dateOfEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#dateOfEvent> <http://www.w3.org/2000/01/rdf-schema#label> "date of event"@en .
+# 
+# http://example.org/christmas#giftFor
+<http://example.org/christmas#giftFor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#giftFor> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#receivesGift> .
+<http://example.org/christmas#giftFor> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#giftFor> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#giftFor> <http://www.w3.org/2000/01/rdf-schema#label> "gift for"@en .
+# 
+# http://example.org/christmas#giftGivenBy
+<http://example.org/christmas#giftGivenBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#giftGivenBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#giftGivenBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#giftGivenBy> <http://www.w3.org/2000/01/rdf-schema#label> "gift given by"@en .
+# 
+# http://example.org/christmas#givesGift
+<http://example.org/christmas#givesGift> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#givesGift> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#giftGivenBy> .
+<http://example.org/christmas#givesGift> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#givesGift> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#givesGift> <http://www.w3.org/2000/01/rdf-schema#label> "gives gift"@en .
+# 
+# http://example.org/christmas#givesGiftTo
+<http://example.org/christmas#givesGiftTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#givesGiftTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#givesGiftTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#givesGiftTo> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://example.org/christmas#giftFor> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://example.org/christmas#givesGift> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://example.org/christmas#givesGiftTo> <http://www.w3.org/2000/01/rdf-schema#label> "gives gift to"@en .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Axiom> .
+_:genid3 <http://www.w3.org/2002/07/owl#annotatedSource> <http://example.org/christmas#givesGiftTo> .
+_:genid3 <http://www.w3.org/2002/07/owl#annotatedProperty> <http://www.w3.org/2002/07/owl#propertyChainAxiom> .
+_:genid3 <http://www.w3.org/2002/07/owl#annotatedTarget> _:genid2 .
+_:genid3 <http://www.w3.org/2000/01/rdf-schema#comment> "If P givesGift G and G giftFor Q, infer P givesGiftTo Q."@en .
+# 
+# http://example.org/christmas#givesWish
+<http://example.org/christmas#givesWish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#givesWish> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#wishFrom> .
+<http://example.org/christmas#givesWish> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#givesWish> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Wish> .
+<http://example.org/christmas#givesWish> <http://www.w3.org/2000/01/rdf-schema#label> "gives wish"@en .
+# 
+# http://example.org/christmas#hasDate
+<http://example.org/christmas#hasDate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#hasDate> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#dateOfEvent> .
+<http://example.org/christmas#hasDate> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#hasDate> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Date> .
+<http://example.org/christmas#hasDate> <http://www.w3.org/2000/01/rdf-schema#label> "has date"@en .
+# 
+# http://example.org/christmas#hasParticipant
+<http://example.org/christmas#hasParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#hasParticipant> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#participatesIn> .
+<http://example.org/christmas#hasParticipant> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#hasParticipant> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#hasParticipant> <http://www.w3.org/2000/01/rdf-schema#label> "has participant"@en .
+# 
+# http://example.org/christmas#hasTradition
+<http://example.org/christmas#hasTradition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#hasTradition> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#traditionOfEvent> .
+<http://example.org/christmas#hasTradition> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#hasTradition> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Tradition> .
+<http://example.org/christmas#hasTradition> <http://www.w3.org/2000/01/rdf-schema#label> "has tradition"@en .
+# 
+# http://example.org/christmas#hostedBy
+<http://example.org/christmas#hostedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#hostedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://example.org/christmas#hasParticipant> .
+<http://example.org/christmas#hostedBy> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#hosts> .
+<http://example.org/christmas#hostedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#hostedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#hostedBy> <http://www.w3.org/2000/01/rdf-schema#label> "hosted by"@en .
+# 
+# http://example.org/christmas#hosts
+<http://example.org/christmas#hosts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#hosts> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#hosts> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#hosts> <http://www.w3.org/2000/01/rdf-schema#label> "hosts"@en .
+# 
+# http://example.org/christmas#participatesIn
+<http://example.org/christmas#participatesIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#participatesIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#participatesIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#participatesIn> <http://www.w3.org/2000/01/rdf-schema#label> "participates in"@en .
+# 
+# http://example.org/christmas#placeOfEvent
+<http://example.org/christmas#placeOfEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#placeOfEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Place> .
+<http://example.org/christmas#placeOfEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#placeOfEvent> <http://www.w3.org/2000/01/rdf-schema#label> "place of event"@en .
+# 
+# http://example.org/christmas#receivesGift
+<http://example.org/christmas#receivesGift> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#receivesGift> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Person> .
+<http://example.org/christmas#receivesGift> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#receivesGift> <http://www.w3.org/2000/01/rdf-schema#label> "receives gift"@en .
+# 
+# http://example.org/christmas#takesPlaceAt
+<http://example.org/christmas#takesPlaceAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#takesPlaceAt> <http://www.w3.org/2002/07/owl#inverseOf> <http://example.org/christmas#placeOfEvent> .
+<http://example.org/christmas#takesPlaceAt> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#takesPlaceAt> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Place> .
+<http://example.org/christmas#takesPlaceAt> <http://www.w3.org/2000/01/rdf-schema#label> "takes place at"@en .
+# 
+# http://example.org/christmas#traditionOfEvent
+<http://example.org/christmas#traditionOfEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#traditionOfEvent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Tradition> .
+<http://example.org/christmas#traditionOfEvent> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#traditionOfEvent> <http://www.w3.org/2000/01/rdf-schema#label> "tradition of event"@en .
+# 
+# http://example.org/christmas#wishFrom
+<http://example.org/christmas#wishFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://example.org/christmas#wishFrom> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Wish> .
+<http://example.org/christmas#wishFrom> <http://www.w3.org/2000/01/rdf-schema#range> <http://example.org/christmas#Person> .
+<http://example.org/christmas#wishFrom> <http://www.w3.org/2000/01/rdf-schema#label> "wish from"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://example.org/christmas#dateValue
+<http://example.org/christmas#dateValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#dateValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Date> .
+<http://example.org/christmas#dateValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/christmas#dateValue> <http://www.w3.org/2000/01/rdf-schema#label> "date value"@en .
+# 
+# http://example.org/christmas#giftBudgetEUR
+<http://example.org/christmas#giftBudgetEUR> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#giftBudgetEUR> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#giftBudgetEUR> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/christmas#giftBudgetEUR> <http://www.w3.org/2000/01/rdf-schema#label> "gift budget (EUR)"@en .
+# 
+# http://example.org/christmas#giftLabel
+<http://example.org/christmas#giftLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#giftLabel> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#giftLabel> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/christmas#giftLabel> <http://www.w3.org/2000/01/rdf-schema#label> "gift label"@en .
+# 
+# http://example.org/christmas#hasDescription
+<http://example.org/christmas#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#hasDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://example.org/christmas#hasDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/christmas#hasDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has description"@en .
+# 
+# http://example.org/christmas#hasName
+<http://example.org/christmas#hasName> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#hasName> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://example.org/christmas#hasName> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/christmas#hasName> <http://www.w3.org/2000/01/rdf-schema#label> "has name"@en .
+# 
+# http://example.org/christmas#placeAddress
+<http://example.org/christmas#placeAddress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#placeAddress> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Place> .
+<http://example.org/christmas#placeAddress> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/christmas#placeAddress> <http://www.w3.org/2000/01/rdf-schema#label> "place address"@en .
+# 
+# http://example.org/christmas#wishText
+<http://example.org/christmas#wishText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<http://example.org/christmas#wishText> <http://www.w3.org/2000/01/rdf-schema#domain> <http://example.org/christmas#Wish> .
+<http://example.org/christmas#wishText> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<http://example.org/christmas#wishText> <http://www.w3.org/2000/01/rdf-schema#label> "wish text"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://example.org/christmas#ChristmasEvent
+<http://example.org/christmas#ChristmasEvent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#ChristmasEvent> <http://www.w3.org/2000/01/rdf-schema#label> "Christmas Event"@en .
+<http://example.org/christmas#ChristmasEvent> <http://www.w3.org/2004/02/skos/core#prefLabel> "ChristmasEvent"@en .
+# 
+# http://example.org/christmas#Date
+<http://example.org/christmas#Date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Date> <http://www.w3.org/2000/01/rdf-schema#label> "Date"@en .
+<http://example.org/christmas#Date> <http://www.w3.org/2004/02/skos/core#prefLabel> "Date"@en .
+# 
+# http://example.org/christmas#Gift
+<http://example.org/christmas#Gift> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Gift> <http://www.w3.org/2000/01/rdf-schema#label> "Gift"@en .
+<http://example.org/christmas#Gift> <http://www.w3.org/2004/02/skos/core#prefLabel> "Gift"@en .
+# 
+# http://example.org/christmas#Person
+<http://example.org/christmas#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+<http://example.org/christmas#Person> <http://www.w3.org/2004/02/skos/core#prefLabel> "Person"@en .
+# 
+# http://example.org/christmas#Place
+<http://example.org/christmas#Place> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Place> <http://www.w3.org/2000/01/rdf-schema#label> "Place"@en .
+<http://example.org/christmas#Place> <http://www.w3.org/2004/02/skos/core#prefLabel> "Place"@en .
+# 
+# http://example.org/christmas#Tradition
+<http://example.org/christmas#Tradition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Tradition> <http://www.w3.org/2000/01/rdf-schema#label> "Tradition"@en .
+<http://example.org/christmas#Tradition> <http://www.w3.org/2004/02/skos/core#prefLabel> "Tradition"@en .
+# 
+# http://example.org/christmas#Wish
+<http://example.org/christmas#Wish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://example.org/christmas#Wish> <http://www.w3.org/2000/01/rdf-schema#label> "Wish"@en .
+<http://example.org/christmas#Wish> <http://www.w3.org/2004/02/skos/core#prefLabel> "Wish"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://example.org/christmas#Alex
+<http://example.org/christmas#Alex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#Alex> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Person> .
+<http://example.org/christmas#Alex> <http://example.org/christmas#hasName> "Alex" .
+# 
+# http://example.org/christmas#Barcelona
+<http://example.org/christmas#Barcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#Barcelona> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Place> .
+<http://example.org/christmas#Barcelona> <http://example.org/christmas#hasName> "Barcelona" .
+<http://example.org/christmas#Barcelona> <http://example.org/christmas#placeAddress> "Barcelona, Catalonia"@en .
+# 
+# http://example.org/christmas#BookGift
+<http://example.org/christmas#BookGift> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#BookGift> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Gift> .
+<http://example.org/christmas#BookGift> <http://example.org/christmas#giftFor> <http://example.org/christmas#Maria> .
+<http://example.org/christmas#Maria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#BookGift> <http://example.org/christmas#giftGivenBy> <http://example.org/christmas#Alex> .
+<http://example.org/christmas#BookGift> <http://example.org/christmas#giftBudgetEUR> "18.50"^^<http://www.w3.org/2001/XMLSchema#decimal> .
+<http://example.org/christmas#BookGift> <http://example.org/christmas#giftLabel> "Book"@en .
+# 
+# http://example.org/christmas#BridgeTwinWish
+<http://example.org/christmas#BridgeTwinWish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#BridgeTwinWish> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Wish> .
+<http://example.org/christmas#BridgeTwinWish> <http://example.org/christmas#wishFrom> <http://example.org/christmas#Rolando> .
+<http://example.org/christmas#Rolando> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#BridgeTwinWish> <http://example.org/christmas#wishText> "A semantic digital twin that behaves like a courteous engineer."@en .
+# 
+# http://example.org/christmas#ChristmasDate2025
+<http://example.org/christmas#ChristmasDate2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#ChristmasDate2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Date> .
+<http://example.org/christmas#ChristmasDate2025> <http://example.org/christmas#dateValue> "2025-12-25"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://example.org/christmas#ChristmasDate2025> <http://example.org/christmas#hasName> "Christmas Day 2025"@en .
+# 
+# http://example.org/christmas#ChristmasDinner2025
+<http://example.org/christmas#ChristmasDinner2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#ChristmasDinner2025> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#ChristmasEvent> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hasDate> <http://example.org/christmas#ChristmasDate2025> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hasParticipant> <http://example.org/christmas#Alex> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hasParticipant> <http://example.org/christmas#Maria> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hasTradition> <http://example.org/christmas#SecretSanta> .
+<http://example.org/christmas#SecretSanta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hostedBy> <http://example.org/christmas#Rolando> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#takesPlaceAt> <http://example.org/christmas#Barcelona> .
+<http://example.org/christmas#ChristmasDinner2025> <http://example.org/christmas#hasName> "Christmas Dinner 2025"@en .
+# 
+# http://example.org/christmas#Maria
+<http://example.org/christmas#Maria> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Person> .
+<http://example.org/christmas#Maria> <http://example.org/christmas#hasName> "Maria" .
+# 
+# http://example.org/christmas#Rolando
+<http://example.org/christmas#Rolando> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Person> .
+<http://example.org/christmas#Rolando> <http://example.org/christmas#hasDescription> "A participant in the Christmas playground graph."@en .
+<http://example.org/christmas#Rolando> <http://example.org/christmas#hasName> "Rolando" .
+# 
+# http://example.org/christmas#SecretSanta
+<http://example.org/christmas#SecretSanta> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://example.org/christmas#Tradition> .
+<http://example.org/christmas#SecretSanta> <http://example.org/christmas#hasDescription> "Anonymous gift exchange tradition."@en .
+<http://example.org/christmas#SecretSanta> <http://example.org/christmas#hasName> "Secret Santa"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

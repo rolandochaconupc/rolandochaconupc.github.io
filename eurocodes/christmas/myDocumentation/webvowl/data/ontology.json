@@ -1,0 +1,658 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "http://example.org/christmas", "http://www.w3.org/2001/XMLSchema" ],
+    "iri" : "http://example.org/christmas#Christmas",
+    "labels" : {
+      "en" : "Christmas Ontology (Playground)"
+    },
+    "other" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A compact OWL playground for GraphDB: events, people, gifts, wishes, places, dates, traditions; includes inverses and rule-like axioms.",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "10",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "12",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "14",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "17",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "20",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://example.org/christmas#Place",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Place",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Place",
+      "en" : "Place"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#Barcelona",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "Barcelona"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://example.org/christmas#ChristmasEvent",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "ChristmasEvent",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ChristmasEvent",
+      "en" : "Christmas Event"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#ChristmasDinner2025",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "ChristmasDinner2025"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "4",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "10",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "12",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "14",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#date",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "17",
+    "label" : {
+      "IRI-based" : "date"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "20",
+    "label" : {
+      "IRI-based" : "decimal"
+    }
+  }, {
+    "iri" : "http://example.org/christmas#Date",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Date",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Date",
+      "en" : "Date"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#ChristmasDate2025",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "ChristmasDate2025"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://example.org/christmas#Gift",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Gift",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Gift",
+      "en" : "Gift"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#BookGift",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "BookGift"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://example.org/christmas#Person",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Person",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#Rolando",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "Rolando"
+      }
+    }, {
+      "iri" : "http://example.org/christmas#Maria",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "Maria"
+      }
+    }, {
+      "iri" : "http://example.org/christmas#Alex",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "Alex"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://example.org/christmas#Wish",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Wish",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Wish",
+      "en" : "Wish"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#BridgeTwinWish",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "BridgeTwinWish"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://example.org/christmas#Tradition",
+    "baseIri" : "http://example.org/christmas",
+    "instances" : 0,
+    "annotations" : {
+      "prefLabel" : [ {
+        "identifier" : "prefLabel",
+        "language" : "en",
+        "value" : "Tradition",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Tradition",
+      "en" : "Tradition"
+    },
+    "individuals" : [ {
+      "iri" : "http://example.org/christmas#SecretSanta",
+      "baseIri" : "http://example.org/christmas",
+      "labels" : {
+        "IRI-based" : "SecretSanta"
+      }
+    } ],
+    "attributes" : [ "external" ],
+    "id" : "19"
+  } ],
+  "property" : [ {
+    "id" : "1",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "34",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "35",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "36",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "32",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "37",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://example.org/christmas#dateOfEvent",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "dateOfEvent",
+      "en" : "date of event"
+    },
+    "domain" : "2",
+    "attributes" : [ "object", "external" ],
+    "id" : "1"
+  }, {
+    "iri" : "http://example.org/christmas#giftFor",
+    "inverse" : "8",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "giftFor",
+      "en" : "gift for"
+    },
+    "domain" : "6",
+    "attributes" : [ "object", "external" ],
+    "id" : "5"
+  }, {
+    "iri" : "http://example.org/christmas#givesGiftTo",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "givesGiftTo",
+      "en" : "gives gift to"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://example.org/christmas#giftGivenBy",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "giftGivenBy",
+      "en" : "gift given by"
+    },
+    "domain" : "6",
+    "attributes" : [ "object", "external" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://example.org/christmas#receivesGift",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "receivesGift",
+      "en" : "receives gift"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "8"
+  }, {
+    "iri" : "http://example.org/christmas#dateValue",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "17",
+    "label" : {
+      "IRI-based" : "dateValue",
+      "en" : "date value"
+    },
+    "domain" : "2",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://example.org/christmas#traditionOfEvent",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "traditionOfEvent",
+      "en" : "tradition of event"
+    },
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://example.org/christmas#giftLabel",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "giftLabel",
+      "en" : "gift label"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://example.org/christmas#placeAddress",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "11",
+    "label" : {
+      "IRI-based" : "placeAddress",
+      "en" : "place address"
+    },
+    "domain" : "0",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "22"
+  }, {
+    "iri" : "http://example.org/christmas#hasName",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasName",
+      "en" : "has name"
+    },
+    "domain" : "14",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://example.org/christmas#givesWish",
+    "inverse" : "26",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "25",
+    "label" : {
+      "IRI-based" : "givesWish",
+      "en" : "gives wish"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://example.org/christmas#participatesIn",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "participatesIn",
+      "en" : "participates in"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://example.org/christmas#takesPlaceAt",
+    "inverse" : "29",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "takesPlaceAt",
+      "en" : "takes place at"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://example.org/christmas#hostedBy",
+    "inverse" : "31",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hostedBy",
+      "en" : "hosted by"
+    },
+    "superproperty" : [ "32" ],
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://example.org/christmas#wishFrom",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "wishFrom",
+      "en" : "wish from"
+    },
+    "domain" : "25",
+    "attributes" : [ "object", "external" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://example.org/christmas#hosts",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hosts",
+      "en" : "hosts"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://example.org/christmas#givesGift",
+    "inverse" : "15",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "6",
+    "label" : {
+      "IRI-based" : "givesGift",
+      "en" : "gives gift"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "external" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://example.org/christmas#hasDescription",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "9",
+    "label" : {
+      "IRI-based" : "hasDescription",
+      "en" : "has description"
+    },
+    "domain" : "14",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://example.org/christmas#hasDate",
+    "inverse" : "1",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasDate",
+      "en" : "has date"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://example.org/christmas#placeOfEvent",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "placeOfEvent",
+      "en" : "place of event"
+    },
+    "domain" : "0",
+    "attributes" : [ "object", "external" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://example.org/christmas#hasTradition",
+    "inverse" : "18",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "19",
+    "label" : {
+      "IRI-based" : "hasTradition",
+      "en" : "has tradition"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://example.org/christmas#hasParticipant",
+    "inverse" : "27",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasParticipant",
+      "en" : "has participant"
+    },
+    "domain" : "3",
+    "subproperty" : [ "30" ],
+    "attributes" : [ "object", "external" ],
+    "id" : "32"
+  }, {
+    "iri" : "http://example.org/christmas#giftBudgetEUR",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "giftBudgetEUR",
+      "en" : "gift budget (EUR)"
+    },
+    "domain" : "6",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://example.org/christmas#wishText",
+    "baseIri" : "http://example.org/christmas",
+    "range" : "12",
+    "label" : {
+      "IRI-based" : "wishText",
+      "en" : "wish text"
+    },
+    "domain" : "25",
+    "attributes" : [ "external", "datatype" ],
+    "id" : "38"
+  } ]
+}
